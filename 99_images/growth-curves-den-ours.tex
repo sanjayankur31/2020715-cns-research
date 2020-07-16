@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \begin{axis}[
+    no markers, domain=-0:20, samples=100,
+    y label style={rotate=-90},
+    x axis line style={->},
+    y axis line style={<->},
+    ymin=-2.0, ymax=3.0,
+    axis x line*=center,
+    axis y line*=left,
+    xlabel={\([Ca^{2+}]\)},
+    x label style={at={(1, 0.6)}},
+    ylabel={\(\frac{dz}{dt}\)},
+    grid=major, ytick={0}, xtick=\empty, clip=false,
+    axis on top,
+    height=6.0cm, width=\textwidth, enlargelimits=false
+    ]
+    \addplot [very thick, SinhaBlueE] {gaussnew(1,5.0, 10.0,1)};
+    \addplot [very thick, SinhaRedI] {gaussnew(1,10.0, 15.0,1)};
+
+    \draw [thick, dashed, -] (axis cs:10.0, -2.0)--(axis cs:10.0, 2.1);
+    \node [above] at (axis cs:10.0, 2.2){\(\psi\)};
+    \node [above, SinhaBlueE] at (axis cs:7.5, 2.1){\(z^E_{post}\)};
+    \node [above, SinhaRedI] at (axis cs:12.5, 2.1){\(z^I_{post}\)};
+
+  \end{axis}
+\end{tikzpicture}

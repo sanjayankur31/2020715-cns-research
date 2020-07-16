@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=1, transform shape]
+    \begin{axis}[
+      no markers, domain=-0:20, samples=100,
+      x label style={at={(axis cs:10,-1.0)}},
+      y label style={rotate=-90},
+      x axis line style={->},
+      y axis line style={<->},
+      ymin=-1.5, ymax=2.5,
+      axis x line*=center,
+      axis y line*=left,
+      xlabel={\([Ca^{2+}]\)},
+      ylabel={\(\frac{dz}{dt}\)},
+      grid=major, ytick={-1,0,1}, xtick=\empty, clip=false,
+      axis on top,
+      height=6cm, width=\textwidth, enlargelimits=false
+      ]
+      % excitatory dendritic elements
+      \addplot [very thick] {gaussnew(1,5.0, 15.0, 0.001)};
+
+      \node[left ] (X) at (axis cs:0.0, 1.5) {}; % add to increase some space on top
+      % \node[above left] (E) at (axis cs:5., 0.0000){\(\eta\)};
+      % \node[above right] (F) at (axis cs:15., 0.0000){\(\epsilon\)};
+
+      \draw [thick, dashed, -] (axis cs:15.0, -1.5)--(axis cs:15.0, 2.1);
+      \node [above] at (axis cs:15.0, 2.2){\(\psi\)};
+    \end{axis}
+  \end{tikzpicture}
+

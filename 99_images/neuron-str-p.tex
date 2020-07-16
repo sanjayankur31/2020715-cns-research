@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=0.6, transform shape]
+  % Make it 12 cm long
+  \node (O) at (0cm, 0cm) {};
+  \node (L) at (0cm, -11cm) {};
+
+
+  \node (E) at (0, -2cm) {};
+  \node (I) at (3cm, -2cm) {};
+  %end point of axons
+  \node (axE) at (0, -8.5cm) {};
+  \node (axI) at (3cm, -8.5cm) {};
+
+  % post-elements E
+  \draw [draw=SinhaBlueE, fill=SinhaBlueE, rotate around={30:(0cm,-2.5cm)}] (-0.1cm, -2.5cm) rectangle (0.1cm, -1.6cm);
+  \draw [draw=SinhaRedI, fill=SinhaRedI, rotate around={-30:(0cm,-2.5cm)}] (-0.1cm, -2.5cm) rectangle (0.1cm, -1.6cm);
+  \node [above left=0.4cm of E, text=SinhaBlueE] {\(z^E_{post}\)};
+  \node [above right=0.4cm of E, text=SinhaRedI] {\(z^I_{post}\)};
+  \node [below =0.4cm of axE, text=SinhaBlueE] {\(z^E_{pre}\)};
+
+  % post-elements I
+  \draw [draw=SinhaBlueE, fill=SinhaBlueE, rotate around={30:(3cm,-2.5cm)}] (2.9cm, -2.5cm) rectangle (3.1cm, -1.6cm);
+  \draw [draw=SinhaRedI, fill=SinhaRedI, rotate around={-30:(3cm,-2.5cm)}] (2.9cm, -2.5cm) rectangle (3.1cm, -1.6cm);
+  \node [above left=0.4cm of I, text=SinhaBlueE] {\(z^E_{post}\)};
+  \node [above right=0.4cm of I, text=SinhaRedI] {\(z^I_{post}\)};
+  \node [below =0.4cm of axI, text=SinhaRedI] {\(z^I_{pre}\)};
+
+  % axons later so they overlap the dendritic bits
+  \draw[draw=SinhaBlueE, {Circle[width=1.0cm, length=1.0cm]}-{Triangle[reversed, length=6mm, width=6mm]}, very thick, fill=SinhaBlueE] (E.north) -- (axE.south);
+  \draw[draw=SinhaRedI, {Circle[width=1.0cm, length=1.0cm]}-{Triangle[reversed, length=6mm, width=6mm]}, very thick, fill=SinhaRedI] (I.north) -- (axI.south);
+\end{tikzpicture}

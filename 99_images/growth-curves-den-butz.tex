@@ -1,0 +1,21 @@
+\begin{tikzpicture}[scale=1, transform shape]
+  \begin{axis}[
+    no markers, domain=-0:10, samples=100,
+    y label style={rotate=-90},
+    axis line style={->},
+    axis lines*=left, xlabel={\([Ca^{2+}]\)}, ylabel={},
+    grid=major, ytick={0}, xtick=\empty, clip=false,
+    % axis on top,
+    height=5cm, width=\textwidth, enlargelimits=false
+    ]
+    \addplot [thick, green] {gaussnew(1,1.0, 7.0, 1.0)};
+    \addplot [thick, blue] {gaussnew(1,4.0, 7.0, 1.0)};
+
+
+    \node[left] (A) at (axis cs:0.0, 1){\(\nu\)};
+    \node[left] (B) at (axis cs:0.0, -1){\(-\nu\)};
+    \node[below] at (axis cs:1., 0.0000){\(\eta_{post}\)};
+    \node[below] at (axis cs:4., 0.0000){\(\eta_{pre}\)};
+    \node[below right] at (axis cs:7., 0.0000){\(\epsilon\)};
+  \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+% http://www.texample.net/tikz/examples/degree-wheel/
+\def\radiuslines{1.0cm}
+\def\radiuscircle{0.2cm}
+\def\onedegrad{1.8cm}
+\def\fivedegrad{1.75cm}
+\def\tendegrad{1.7cm}
+\def\circlex{2.0}
+\def\circley{4}
+
+\begin{tikzpicture}[scale=1.2, transform shape]
+  \draw (\circlex, \circley) circle (\radiuscircle);
+
+  \foreach \angle in {120, 125.0,...,180} \draw [very thick, SinhaBlueE] ([shift=(\angle:\radiuscircle + 0.1cm )] \circlex, \circley) -- ++ (\angle:\radiuscircle+\radiuslines);
+  \foreach \angle in {190,200,...,240} \draw [very thick, SinhaRedI] ([shift=(\angle:\radiuscircle + 0.1cm)] \circlex, \circley) -- ++ (\angle:\radiuscircle+\radiuslines);
+
+  \node[left, SinhaBlueE] at (1,5.5) {\(z^{E}_{post}\)};
+  \node[left, SinhaRedI] at (1,2.5) {\(z^{I}_{post}\)};
+
+  \draw [-{Latex[length=2mm]}] (\circlex,2.4) -- ++ (0, 1.0);
+  \node[below] at (\circlex,1.8) {\(I_{ext}\)};
+  % sine wave inside a circle node
+  % https://tex.stackexchange.com/a/257613/11281
+  \node[below, draw,circle,inner sep=-0.4pt] at (\circlex, 2.2)
+  {\tikz \draw[scale=0.05,domain=-3.141:3.141,smooth,variable=\t]
+  plot (\t,{sin(\t r)});};
+
+  \draw [-{Latex[length=2mm]}] (2.5, \circley) -- ++ (0.5 , 0);
+  \node[right] at (3.0, \circley) {\([Ca^{2+}]\)};
+
+
+\end{tikzpicture}
