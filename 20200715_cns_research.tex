@@ -112,6 +112,30 @@
   \end{figure}
 \end{frame}
 \begin{frame}[c]
+  \frametitle{Model predictions I:\ growth curves for post-synaptic neurites}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\linewidth]{99_images/growth-post}
+    \caption{Post-synaptic elements react to changes in activity in opposite ways. \(dz/dt\) is the rate of growth for a neurite type, \(z\). Excitatory post synaptic elements \(z^E_{post}\) are formed when the neuron has less than optimal activity to try and gain more excitatory input but are retracted if the neuron has more activity than it needs to reduce excitatory input. Similarly, if a neuron has more than optimal activity, it forms inhibitory post-synaptic elements \(z^I_{post}\) to try to gain inhibitory input but will lose them if it has less activity than necessary. Together, even though distilled from network simulations, these growth rules allow single neurons to stabilise their own activity levels.}
+  \end{figure}
+\end{frame}
+\begin{frame}[c]
+  \frametitle{Model predictions III:\ growth curves for pre-synaptic neurites}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\linewidth]{99_images/growth-pre}
+    \caption{Pre-synaptic elements also react to changes in activity in opposite ways. These were derived by a limited grid search. Excitatory neurons sprout pre-synaptic neurites \(z^E{pre}\) when they have more than optimal activity, while inhibitory neurons sprout their inhibitory pre-synaptic neurites \(z^I_{pre}\) when they have less than optimal activity. In each case, it appears the neurons tries to make the network match its own activity levels, assuming it to be optimal.}
+  \end{figure}
+\end{frame}
+\begin{frame}[c]
+  \frametitle{Model predictions IV:\ structural and synaptic both necessary}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.50\linewidth]{99_images/syn-str-both}
+    \caption{Both structural and synaptic plasticity are necessary for repair. \textbf{(a)}: synaptic plasticity only, \textbf{(b)} both structural and synaptic plasticity, \textbf{(c)} only structural plasticity.}
+  \end{figure}
+\end{frame}
+\begin{frame}[c]
   \frametitle{Associative memory performance drops after deafferentation}
   \begin{figure}[h]
     \centering
@@ -135,15 +159,12 @@
   \frametitle{Open questions for future work}
   \begin{itemize}
     \item Experimental validation of peripheral lesioning model\footnotemark[4]{}.
-    \pause{}
     \item Should performance be retained after deprivation by peripheral lesions?
-      \pause{}
     \item How can the performance be retained/improved?
       \begin{itemize}
         \item Modulation of the structural plasticity process?
         \item Retraining/recall of associative memory during repair?
       \end{itemize}
-      \pause{}
     \item If performance is not retained, does the network continue to function as an associative memory store for new memories?
   \end{itemize}
   \footnotetext[4]{Manuscript in review, preprint: \fullcite{Sinha2019}}
